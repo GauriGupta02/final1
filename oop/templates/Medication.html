@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Health Care Website</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Hero Section Background */
+    .hero-bg {
+      background-image: url('https://medisafe.com/wp-content/uploads/2021/12/home-hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hero-content {
+      top: 38%;
+      left: 40px;
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    .hero-text {
+      top: 48%;
+      left: 70px;
+      color: white;
+      font-size: 1.25rem;
+      line-height: 1.8;
+      opacity: 0;
+      animation: fadeIn 3s forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Navbar */
+    nav {
+
+      transition: all 0.3s ease;
+    }
+
+    nav:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Button Styling */
+    .btn-custom {
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      background-color: #0cb8b6;
+      color: white;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-custom:hover {
+      background-color: #17c2a4;
+      transform: scale(1.1);
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+      color: #17c2a4;
+    }
+
+    footer {
+      background-color: #0a1f3f;
+      color: white;
+      padding: 40px 0;
+    }
+
+    footer .social-icons a {
+      color: white;
+      font-size: 1.5rem;
+      margin-right: 16px;
+      transition: color 0.3s;
+    }
+
+    footer .social-icons a:hover {
+      color: #0cb8b6;
+    }
+  </style>
+
+</head>
+
+<body class="font-sans bg-gray-100">
+
+  <div class="flex justify-between items-center bg-black text-white px-6 py-2 mt-4 mb-2 sticky top-0 z-50">
+    <div class="text-xl font-semibold">📍 Gwalior, 474001</div>
+    <div class="bg-[#0cb8b6] text-black px-6 py-2 rounded-md font-bold text-lg">
+      Welcome To A Health Care Website - We Always Care For You
+    </div>
+    <div class="text-sm font-semibold">📞 +91-9713-XXXX</div>
+  </div>
+
+  <nav
+    class="flex items-center justify-between px-6 py-4 bg-[rgba(255,255,255,0.2)] shadow-md backdrop-blur-lg sticky top-16 z-50">
+    <div class="flex items-center">
+      <img src="https://img.freepik.com/premium-vector/medicine-logo-design-template_269830-1601.jpg?w=2000" alt="Logo"
+        class="h-10 w-10">
+      <h1 class="font-bold text-2xl text-blue-700 pl-2">MEDICAL</h1>
+    </div>
+
+    <div class="flex space-x-8 text-lg text-gray-800">
+      <div class="group relative cursor-pointer">
+        <div class="hover:text-blue-600 transition">Home 🏠 ▼</div>
+        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 z-10">
+          <div class="px-4 py-2 hover:bg-gray-100">Dashboard</div>
+          <div class="px-4 py-2 hover:bg-gray-100">Profile</div>
+          <div class="px-4 py-2 hover:bg-gray-100">Notifications</div>
+        </div>
+      </div>
+
+      <div class="hover:text-blue-600 transition cursor-pointer">About Us 🏥 ▼</div>
+      <div class="hover:text-blue-600 transition cursor-pointer">Services 🩺 ▼</div>
+
+      <div class="group relative cursor-pointer">
+        <div class="hover:text-blue-600 transition">Contact Us 📞 ▼</div>
+        <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-lg mt-2 py-2 z-10">
+          <div class="px-4 py-2 hover:bg-gray-100">Email</div>
+          <div class="px-4 py-2 hover:bg-gray-100">Phone</div>
+          <div class="px-4 py-2 hover:bg-gray-100">Support</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex space-x-6">
+      <button class="text-gray-600 hover:text-blue-600 transition">🌙</button>
+      <button class="btn-custom">Learn More</button>
+      <button class="btn-custom">Log in</button>
+    </div>
+  </nav>
+
+  <div class="relative hero-bg h-[800px]">
+    <img src="https://medisafe.com/wp-content/uploads/2021/12/home-hero-bg.jpg"
+      class="absolute w-full h-full object-cover" alt="Background">
+    <div class="hero-content absolute top-[38%] left-[40px] text-5xl font-bold z-20">
+      Trusted Care for a Healthier Tomorrow.
+    </div>
+    <div class="hero-text absolute top-[48%] left-[70px] text-lg z-20">
+      "Remembering to take medications isn’t easy as we grow older.<br />
+      But we deliver the best solution to help you stay on track with your medication.<br />
+      Stay healthy, stay reminded!"
+      <div class="mt-[50px]">
+        <button class="btn-custom">Learn More</button>
+        <a href="{{ url_for('index') }}">
+          <button class="btn-custom ml-[20px]">Sign In</button>
+        </a>
+      </div>
+    </div>
+
+    <div class="absolute top-[50%] right-[-120px] transform -translate-x-1/2 -translate-y-1/2 z-10">
+      <img src="https://validthemes.net/site-template/medihub/assets/img/thumb-1.png"
+        class="w-[520px] h-full drop-shadow-[0_0_40px_rgba(0,0,0,4)]" alt="Doctor">
+    </div>
+  </div>
+
+  <div class="relative">
+    <img src="https://validthemes.net/site-template/medihub/assets/img/about/1.jpg"
+      class="absolute mt-[50px] right-[160px] w-[590px] h-[590px]">
+    <h1 class="absolute left-[10%] mt-[150px] text-5xl font-bold text-black">
+      24 Hours Emergency Services
+    </h1>
+    <p class="w-[550px] absolute left-[11%] mt-[230px] text-xl text-[#666666]">
+      Managing medications on time is essential for good health, but keeping track of multiple prescriptions can be
+      challenging.
+      Our 24-hour Medication Reminder System ensures you never forget a dose, helping you stay on top of your health
+      effortlessly.
+      <br /><br />
+      With smart alerts, caregiver notifications, and easy-to-use features, we provide a seamless solution for seniors,
+      individuals with chronic conditions, and anyone needing a reliable medication schedule. Stay worry-free while we
+      keep you on track!
+    </p>
+    <button class="btn-custom absolute left-[11%] mt-[550px]">
+      Read More
+    </button>
+  </div>
+
+  <div class="mt-[660px] bg-[#14457b] h-[550px] flex items-center justify-between px-10">
+    <div>
+      <img
+        src="https://media.istockphoto.com/id/1473162531/photo/help-support-and-wheelchair-with-nurse-and-old-man-for-disability-rehabilitation-or-healing.jpg?s=612x612&w=0&k=20&c=6Tzl6U4qR2dyhpEv-DonkMMp_SOtndTjaGeUDHLI4cg="
+        width="620px" alt="Old Man" class="object-cover">
+    </div>
+    <div class="w-1/2 text-white ml-8">
+      <h1 class="text-5xl font-bold mb-4">
+        Insights: When Patients are <br />Most Likely to Skip Doses:
+      </h1>
+      <p class="text-xl mb-6">
+        Fridays and Saturdays are the toughest adherence days of the week reported by people who use Medisafe.
+        Medisafe's Just-In-Time-Interventions technology enables targeted, personalized interventions to improve
+        adherence and persistence.
+      </p>
+      <button class="btn-custom text-2xl">
+        <a href="https://www.medisafe.com/data-insights/">Visit Our insights</a>
+      </button>
+    </div>
+  </div>
+
+  <div class="flex flex-col md:flex-row justify-between bg-white px-10 py-16 relative">
+    <div class="w-[800px]">
+      <h4
+        class="text-[22px] font-semibold text-black mb-4 relative after:content-[''] after:block after:w-10 after:h-0.5 after:bg-[#17c2a4] after:mt-1">
+        About
+      </h4>
+      <p class="text-gray-600 mb-4">
+        Excellence decisively nay man yet impression for contrasted remarkably. There spoke.
+      </p>
+      <h2 class="flex items-center font-bold text-xl text-[#17c2a4] bg-[#eaf9f8] p-2 rounded-lg">
+        <img src="https://validthemes.net/site-template/medihub/assets/img/icon/1.png" alt="Phone" class="w-6 mr-2">
+        +123 456 7890
+      </h2>
+
+      <div class="mt-4">
+        <h5 class="text-lg font-semibold text-black">Our Vision And Aim</h5>
+        <p class="w-[700px] mt-4 text-gray-700">
+          At Here, our vision is to revolutionize medication adherence by making it effortless, accessible, and
+          reliable. We aim to empower individuals, especially seniors and those managing chronic conditions, with a
+          seamless 24/7 medication reminder system that ensures they never miss a dose.
+        </p>
+      </div>
+    </div>
+    <div class="absolute top-17 right-0">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW-ncMYF2FI8ScQlGtv24n6eXJX6FewNaCNw&s"
+        width=720px alt="Stats Image">
+    </div>
+  </div>
+
+  <footer class="bg-[#0a1f3f] text-white py-4 mt-[100px]">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <p class="text-sm">
+        © Copyright 2025. All Rights Reserved by
+        <a href="#" class="text-teal-400 hover:underline">validthemes</a>
+      </p>
+      <div class="flex space-x-6 text-sm">
+        <a href="#" class="footer-link">Terms of user</a>
+        <a href="#" class="footer-link">License</a>
+        <a href="#" class="footer-link">Support</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
